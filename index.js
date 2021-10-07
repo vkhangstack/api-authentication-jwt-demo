@@ -8,6 +8,7 @@ const createUser = require("./routes/user");
 const authLogin = require("./routes/auth");
 
 connectDB();
+app.disable("x-powered-by");
 app.use(express.json());
 app.use("/api/user", createUser);
 app.use("/api/auth", authLogin);
