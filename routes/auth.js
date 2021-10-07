@@ -36,9 +36,7 @@ const validate = (user) => {
 /**get info user form token , and middleware */
 router.get("/me", auth, async (req, res) => {
   try {
-    const user = await User.find({ _id: { $in: req.user._id } }).select(
-      "-password-__v",
-    );
+    const user = await User.findById(req.user._id).select("-password-__v");
     return res.send(user);
   } catch (error) {
     return res.status(400).send("Bad request");
