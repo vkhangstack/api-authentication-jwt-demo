@@ -6,8 +6,13 @@ const app = express();
 const connectDB = require("./database/db");
 const createUser = require("./routes/user");
 const authLogin = require("./routes/auth");
-
+const RateLimit = require("express-rate-limit");
+const limiter = new RateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 5,
+});
 connectDB();
+app.use(limiter);
 app.disable("x-powered-by");
 app.use(express.json());
 app.use("/api/user", createUser);

@@ -6,6 +6,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 
+/**user login method*/
 router.post("/", async (req, res) => {
   try {
     const { error } = validate(req.body);
@@ -32,10 +33,12 @@ const validate = (user) => {
   });
   return schema.validate(user);
 };
-
+/**get info user form token , and middleware */
 router.get("/me", auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user._id).select("-password-__v");
+    const user = await User.find({ _id: { $eq: req.user._id } }).select(
+      "-password-__v",
+    );
     return res.send(user);
   } catch (error) {
     return res.status(400).send("Bad request");
