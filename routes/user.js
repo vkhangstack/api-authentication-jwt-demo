@@ -5,6 +5,7 @@ const router = express.Router();
 const { User, validate } = require("../models/user");
 const bcrypt = require("bcrypt");
 
+/** create user */
 router.post("/", async (req, res) => {
   try {
     const { error } = validate(req.body);
