@@ -1,0 +1,15 @@
+{
+  "_id": {
+    "$oid": "615f56941cafdc3d47912a6f"
+  },
+  "name": "vkhangstack",
+  "email": "youremail@gmail.com",
+  "password": "$2b$10$4Hz1dbjJ4HVnym3pftZ7NO/tyqc9YBYfzLy6C7vu/Wb1Lq1.ta32C",
+  "createdAt": {
+    "$date": "2021-10-07T20:20:36.280Z"
+  },
+  "updatedAt": {
+    "$date": "2021-10-07T20:20:36.280Z"
+  },
+  "__v": 0
+}
