@@ -7,9 +7,13 @@ const connectDB = require("./database/db");
 const createUser = require("./routes/user");
 const authLogin = require("./routes/auth");
 const RateLimit = require("express-rate-limit");
+const xXssProtection = require("x-xss-protection");
+
+// Set "X-XSS-Protection: 0"
+app.use(xXssProtection());
 const limiter = new RateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 5,
+  max: 10,
 });
 connectDB();
 app.use(limiter);
