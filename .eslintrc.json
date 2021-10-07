@@ -1,0 +1,21 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "rules": {
+    "callback-return": "warn",
+    "camelcase": "warn",
+    "arrow-spacing": "warn",
+    "strict": "warn",
+    "sort-imports": "warn",
+    "class-methods-use-this": "warn",
+    "no-empty": "warn",
+    "require-await": "error"
+  }
+}

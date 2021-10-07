@@ -1,0 +1,4 @@
+node_modules
+.env
+.vscode
+sonar-project.properties
