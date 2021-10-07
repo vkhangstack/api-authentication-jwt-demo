@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
     const { error } = validate(req.body);
     if (error) return res.status(400).send("You have an error input");
 
-    const user = await User.find({ email: { $eq: req.body.email } });
+    const user = await User.find({ email: { $eq: req.body.email.toString() } });
     if (!user) return res.status(400).send("Invalid email or password.");
     let password = user[0].password;
     const validPassword = await bcrypt.compare(req.body.password, password);
