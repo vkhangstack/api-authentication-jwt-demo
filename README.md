@@ -1,0 +1,2 @@
+# api-authentication-jwt-demo
+Authentication is most important feature in every application. Even if you are beginner feel free to try this tutorial, we gonna start from scratch. We also gonna write Auth middleware, which gonna allow only authenticated people to access the route.Authentication is most important feature in every application. Even if you are beginner feel free to try this tutorial, we gonna start from scratch. We also gonna write Auth middleware, which gonna allow only authenticated people to access the route.
