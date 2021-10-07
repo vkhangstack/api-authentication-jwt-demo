@@ -36,7 +36,7 @@ const validate = (user) => {
 /**get info user form token , and middleware */
 router.get("/me", auth, async (req, res) => {
   try {
-    const user = await User.find({ _id: { $eq: req.user._id } }).select(
+    const user = await User.find({ _id: { $in: req.user._id } }).select(
       "-password-__v",
     );
     return res.send(user);
