@@ -7,17 +7,9 @@ const connectDB = require("./database/db");
 const createUser = require("./routes/user");
 const authLogin = require("./routes/auth");
 const RateLimit = require("express-rate-limit");
-const xXssProtection = require("x-xss-protection");
 
-// Set "X-XSS-Protection: 0"
-app.use(xXssProtection());
-// NOTE: This is probably insecure!
-app.use((req, res, next) => {
-  res.setHeader("X-XSS-Protection", "1; mode=block");
-  next();
-});
 const limiter = new RateLimit({
-  windowMs: 1 * 60 * 1000, // 1 minute
+  windowMs: 1 * 60 * 1000, // 1 minute only 10 request
   max: 10,
 });
 connectDB();
