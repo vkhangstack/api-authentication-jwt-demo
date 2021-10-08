@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 router.post("/", async (req, res) => {
   try {
     const { error } = validate(req.body);
-    if (error) return res.status(400).send("Input please");
+    if (error) return res.status(400).send("Input not accepted please");
 
     const user = await new User(req.body);
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
